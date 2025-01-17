@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Video Player</title>
+</head>
+<body>
+  <h2>影片播放</h2>
+  <video id="videoPlayer" width="640" height="360" controls>
+    <source src="http://localhost:3000/video" type="video/mp4">
+    您的瀏覽器不支援影片播放。
+  </video>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token');
+      console.log('Token:', token); // 確認 Token 是否存在
+
+      if (!token) {
+        // alert('請先登入');
+        // window.location.href = 'login.html';
+      } else {
+        // 將 Authorization Token 加入到所有的請求中
+        const videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.setAttribute('src', `http://localhost:3000/video?token=${token}`);
+      }
+    });
+  </script>
+</body>
+</html>
