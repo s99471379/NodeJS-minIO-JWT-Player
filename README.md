@@ -1,4 +1,4 @@
-# Jellyfin-JWT-Video-Player
+# NodeJS-minIO-JWT-Player
 
 This project integrates **MinIO** with **JWT authentication** to provide a secure video streaming solution in a web application. It allows users to log in, stream videos directly from MinIO, and ensures secure access control using JWT tokens.
 
